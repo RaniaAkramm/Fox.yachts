@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fox.yachts | Premium Maritime Identity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        h1, h2, .brand-font { font-family: 'Cinzel', serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #fff; }
+        .gold-gradient { background: linear-gradient(45deg, #c5a059, #f9f1d2, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .image-card { transition: transform 0.5s ease; cursor: pointer; overflow: hidden; }
+        .image-card:hover { transform: scale(1.05); }
+        .overlay { background: rgba(0, 0, 0, 0.5); transition: 0.3s; }
+        .image-card:hover .overlay { background: rgba(0, 0, 0, 0.2); }
+    </style>
+</head>
+<body>
+
+    <section class="relative h-screen flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1567891245344-7c27b34d7285?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover" alt="Luxury Yacht">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-widest uppercase">Fox<span class="gold-gradient">.yachts</span></h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto font-light tracking-widest">The Ultimate Digital Anchor for Luxury Yachting</p>
+            <a href="#inquiry" class="bg-[#c5a059] text-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-white transition-all">Acquire Domain</a>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#0f0f0f]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-8 uppercase tracking-tighter">A Brand Built for <span class="text-[#c5a059]">Excellence</span></h2>
+                <div class="space-y-6 text-slate-400 leading-relaxed">
+                    <p><i class="fas fa-check text-[#c5a059] mr-2"></i> <strong>Unforgettable:</strong> One of the shortest and most powerful maritime names available.</p>
+                    <p><i class="fas fa-check text-[#c5a059] mr-2"></i> <strong>Industry Targeted:</strong> The .yachts extension instantly filters your audience to high-net-worth individuals.</p>
+                    <p><i class="fas fa-check text-[#c5a059] mr-2"></i> <strong>Versatile:</strong> Perfect for a yacht brokerage, charter service, or luxury lifestyle magazine.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="image-card rounded-lg h-64 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+                </div>
+                <div class="image-card rounded-lg h-64 mt-8 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798156?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-3xl mb-16 uppercase tracking-[0.5em] font-light">Visual Potential</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="image-card relative h-80">
+                    <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 overlay flex items-center justify-center">
+                        <span class="text-xs uppercase tracking-widest font-bold">Luxury Lifestyle</span>
+                    </div>
+                </div>
+                <div class="image-card relative h-80">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 overlay flex items-center justify-center">
+                        <span class="text-xs uppercase tracking-widest font-bold">Ocean Exploration</span>
+                    </div>
+                </div>
+                <div class="image-card relative h-80">
+                    <img src="https://images.unsplash.com/photo-1621272036047-bb0f76bbc1ad?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 overlay flex items-center justify-center">
+                        <span class="text-xs uppercase tracking-widest font-bold">Modern Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry" class="py-24 bg-white text-black px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Secure This Asset</h2>
+            <p class="text-slate-600 mb-12">Submit your private offer for <strong>Fox.yachts</strong>. Direct owner sale.</p>
+            <form class="space-y-4">
+                <input type="text" placeholder="Full Name" class="w-full border-2 border-slate-200 p-4 outline-none focus:border-[#c5a059]">
+                <input type="email" placeholder="Email Address" class="w-full border-2 border-slate-200 p-4 outline-none focus:border-[#c5a059]">
+                <input type="text" placeholder="Your Offer (USD)" class="w-full border-2 border-slate-200 p-4 outline-none focus:border-[#c5a059]">
+                <button class="w-full bg-black text-white p-5 font-bold uppercase tracking-widest hover:bg-[#c5a059] transition">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-600 text-xs tracking-widest uppercase">
+        &copy; 2026 Fox.yachts Portfolio • Established Authority
+    </footer>
+
+</body>
+</html>
