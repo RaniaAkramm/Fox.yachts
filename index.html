@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOX YACHTS | The Gold Standard of Maritime Luxury</title>
+    <title>FOX.YACHTS | Premium Maritime Asset</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: '#C9A54C',
-                        navy: '#020B1A',
-                        ocean: '#0A192F'
+                        carbon: '#060606',
+                        emerald: '#10b981',
+                        slate: '#94a3b8'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
                     }
                 }
             }
@@ -28,237 +28,221 @@
 
     <style>
         body {
-            background-color: #020B1A;
-            color: white;
+            background-color: #060606;
+            color: #ffffff;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
         
-        .hero-gradient {
-            background: linear-gradient(rgba(2, 11, 26, 0.7), rgba(2, 11, 26, 0.9)), 
-                        url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2000&auto=format&fit=crop');
+        .hero-bg {
+            background: linear-gradient(rgba(6, 6, 6, 0.75), rgba(6, 6, 6, 1)), 
+                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
 
-        .gold-border {
-            border-image: linear-gradient(to bottom, #C9A54C, transparent) 1;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(201, 165, 76, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
         }
 
-        .nav-link::after {
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom right, #ffffff 30%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-btn {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        @keyframes scan-glow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .scan-glow::after {
             content: '';
-            display: block;
-            width: 0;
-            height: 1px;
-            background: #C9A54C;
-            transition: width .3s;
-        }
-        .nav-link:hover::after { width: 100%; }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .float { animation: float 5s ease-in-out infinite; }
-
-        .sale-banner {
-            background: linear-gradient(90deg, #C9A54C, #E5C77E, #C9A54C);
-            background-size: 200% auto;
-            animation: shine 3s linear infinite;
-        }
-        @keyframes shine {
-            to { background-position: 200% center; }
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.05), transparent);
+            animation: scan-glow 8s linear infinite;
         }
     </style>
 </head>
-<body class="font-sans selection:bg-gold selection:text-navy">
+<body class="font-sans">
 
-    <!-- Top Sale Banner -->
-    <div class="sale-banner py-2 px-6 sticky top-0 z-[100] shadow-2xl">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-navy font-bold text-xs uppercase tracking-widest">
-            <div class="flex items-center gap-2">
-                <span class="bg-navy text-white px-2 py-0.5 rounded text-[10px]">PREMIUM ASSET</span>
-                <span id="banner-text">Domain For Sale: Fox.yachts</span>
+    <!-- Top Navigation & Sale Status -->
+    <header class="border-b border-white/5 py-4 px-6 sticky top-0 z-[100] bg-carbon/90 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-2.5 h-2.5 bg-emerald rounded-full shadow-[0_0_10px_#10b981]"></div>
+                <span class="text-xs font-bold tracking-[0.2em] uppercase text-emerald" id="status-tag">Domain Asset Available</span>
             </div>
+            
             <div class="flex items-center gap-6">
-                <select class="bg-transparent border-none outline-none cursor-pointer" onchange="changeLanguage(this.value)">
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                </select>
-                <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" target="_blank" class="hidden md:block underline">Buy on GoDaddy</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="max-w-7xl mx-auto flex justify-between items-center p-8 relative z-50">
-        <div class="flex items-center gap-4 group">
-            <div class="w-12 h-12 bg-gold flex items-center justify-center rounded-sm rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-[0_0_20px_rgba(201,165,76,0.3)]">
-                <span class="text-navy font-black text-2xl -rotate-45 group-hover:rotate-0 transition-all duration-500">F</span>
-            </div>
-            <span class="text-2xl font-serif italic tracking-tighter uppercase font-black">Fox <span class="text-gold">Yachts</span></span>
-        </div>
-        <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">
-            <a href="#" class="nav-link text-white">The Fleet</a>
-            <a href="#" class="nav-link">Destinations</a>
-            <a href="#" class="nav-link">Experience</a>
-            <a href="mailto:cccvcccv3@gmail.com" class="text-gold">Inquire</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-gradient min-h-[90vh] flex items-center justify-center text-center px-6 -mt-28">
-        <div class="max-w-4xl">
-            <h2 class="text-gold font-bold tracking-[0.6em] text-[10px] md:text-xs uppercase mb-6 opacity-80" id="hero-sub">The Pinnacle of Maritime Luxury</h2>
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-serif italic font-black mb-10 leading-none">
-                Sailing <br> <span class="text-gold">Perfection.</span>
-            </h1>
-            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12" id="hero-desc">
-                Fox.yachts represents more than a domain; it is a legacy. A short, powerful, and elite identity for the world's most prestigious maritime businesses.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" target="_blank" 
-                   class="bg-gold text-navy px-12 py-5 font-black uppercase tracking-widest text-sm hover:bg-white transition-all shadow-[0_15px_30px_rgba(201,165,76,0.2)]">
-                    Acquire Domain
-                </a>
-                <a href="mailto:cccvcccv3@gmail.com" class="text-white border-b-2 border-gold/40 py-2 text-xs font-black uppercase tracking-widest hover:border-gold transition-all">
-                    Direct Inquiry
-                </a>
+                <div class="flex gap-2">
+                    <button onclick="changeLanguage('en')" class="lang-btn">EN</button>
+                    <button onclick="changeLanguage('ar')" class="lang-btn">AR</button>
+                </div>
+                <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" target="_blank" class="hidden md:block text-xs font-bold uppercase tracking-widest border-b border-white/20 hover:border-emerald hover:text-emerald transition pb-1">Buy on GoDaddy</a>
             </div>
         </div>
     </header>
 
-    <!-- Asset Value Section -->
-    <section class="max-w-7xl mx-auto px-8 py-32 grid lg:grid-cols-2 gap-20 items-center">
-        <div class="space-y-10">
-            <div class="inline-block border-l-4 border-gold pl-6">
-                <h2 class="text-4xl md:text-6xl font-serif italic font-black uppercase leading-tight" id="about-title">Why <br> <span class="text-gold">Fox.yachts?</span></h2>
-            </div>
-            <p class="text-slate-400 text-lg leading-relaxed font-light italic" id="about-desc">
-                The ".yachts" extension is the exclusive digital real estate for the maritime elite. "Fox" signifies intelligence, speed, and luxury. Combined, they create a brand that is unforgettable.
-            </p>
-            <div class="grid grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-sm">
-                    <p class="text-gold text-3xl font-black mb-1">01.</p>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500" id="stat-1">Brand Authority</p>
-                </div>
-                <div class="glass p-8 rounded-sm">
-                    <p class="text-gold text-3xl font-black mb-1">Elite</p>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500" id="stat-2">Global TLD</p>
-                </div>
-            </div>
+    <!-- Brand Identity -->
+    <nav class="max-w-7xl mx-auto flex justify-between items-center p-8 md:p-12">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 border-2 border-white flex items-center justify-center font-bold text-lg">F</div>
+            <span class="text-2xl font-extrabold tracking-tighter uppercase">Fox<span class="text-emerald">.Yachts</span></span>
         </div>
-        <div class="relative float">
-            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1000&auto=format&fit=crop" 
-                 class="w-full rounded-sm grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl border border-white/5" alt="Luxury Yacht">
-            <div class="absolute -bottom-10 -left-10 glass p-10 hidden md:block">
-                <p class="font-serif italic text-3xl">Absolute <br> Privacy.</p>
-            </div>
+        <div class="hidden lg:flex gap-12 text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
+            <a href="#" class="hover:text-white transition">Inventory</a>
+            <a href="#" class="hover:text-white transition">Philosophy</a>
+            <a href="mailto:cccvcccv3@gmail.com" class="text-emerald font-extrabold">Contact Owner</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- Experience Grid -->
-    <section class="py-32 bg-ocean/50 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-20">
-                <h3 class="text-gold font-bold tracking-[0.4em] text-[10px] uppercase mb-4">The Experience</h3>
-                <h2 class="text-4xl md:text-6xl font-serif italic font-black uppercase" id="exp-title">Uncharted Luxury</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="space-y-6 group">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=800&auto=format&fit=crop" class="w-full scale-110 group-hover:scale-100 transition duration-1000">
-                    </div>
-                    <h4 class="text-xl font-bold font-serif italic uppercase">Private Charters</h4>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed">Curated journeys through the Mediterranean and Caribbean seas.</p>
-                </div>
-                <div class="space-y-6 group">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" class="w-full scale-110 group-hover:scale-100 transition duration-1000">
-                    </div>
-                    <h4 class="text-xl font-bold font-serif italic uppercase">Elite Concierge</h4>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed">A standard of service that anticipates your every desire.</p>
-                </div>
-                <div class="space-y-6 group">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop" class="w-full scale-110 group-hover:scale-100 transition duration-1000">
-                    </div>
-                    <h4 class="text-xl font-bold font-serif italic uppercase">Modern Fleet</h4>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed">State-of-the-art engineering meets bespoke interior design.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Acquisition CTA -->
-    <section class="max-w-5xl mx-auto px-8 py-40">
-        <div class="glass p-12 md:p-24 rounded-sm text-center relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -z-10"></div>
-            <h2 class="text-4xl md:text-7xl font-serif italic font-black uppercase mb-8 leading-tight">Own <br> <span class="text-gold">Fox.yachts</span></h2>
-            <p class="text-slate-400 text-lg mb-12 max-w-xl mx-auto" id="cta-desc">
-                Invest in a domain that reflects your ambition. Secure this digital masterpiece today before it's gone forever.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+    <!-- Hero: Medium Balanced Typography -->
+    <section class="hero-bg min-h-[80vh] flex items-center px-8 relative overflow-hidden scan-glow">
+        <div class="max-w-5xl relative z-20">
+            <h2 class="text-emerald font-bold tracking-[0.5em] text-xs uppercase mb-8 opacity-80" id="hero-sub">Defining Global Maritime Presence</h2>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-gradient uppercase tracking-tight leading-[1.05] mb-10">
+                The Stealth <br> <span class="italic font-light">Fleet Asset.</span>
+            </h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start">
                 <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" target="_blank" 
-                   class="bg-white text-navy px-12 py-5 font-black uppercase tracking-widest text-sm hover:bg-gold transition-all shadow-2xl">
-                    Buy on GoDaddy
+                   class="bg-white text-black px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-emerald hover:text-white transition-all shadow-2xl">
+                    Secure Acquisition
                 </a>
-                <a href="mailto:cccvcccv3@gmail.com" class="border border-white/20 px-12 py-5 font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all">
-                    Make Offer
-                </a>
+                <p class="text-slate-400 text-base max-w-sm font-medium leading-relaxed border-l-2 border-emerald/30 pl-6" id="hero-desc">
+                    Fox.yachts is a high-performance digital identifier. Strategically crafted for the next era of elite luxury yachting and maritime brokerage.
+                </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions: Balanced Grid -->
+    <section class="max-w-7xl mx-auto px-8 py-32">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="glass-card p-12 rounded-2xl">
+                <span class="text-emerald text-sm font-bold uppercase tracking-widest mb-6 block">Legacy</span>
+                <h3 class="text-3xl font-bold uppercase mb-6" id="spec-1-title">Short & Precise</h3>
+                <p class="text-slate-400 text-base" id="spec-1-desc">Three letters. Infinite brandability. Fox.yachts commands immediate authority in a world where speed and precision matter.</p>
+            </div>
+            <div class="glass-card p-12 rounded-2xl">
+                <span class="text-emerald text-sm font-bold uppercase tracking-widest mb-6 block">Visibility</span>
+                <h3 class="text-3xl font-bold uppercase mb-6" id="spec-2-title">Targeted Search</h3>
+                <p class="text-slate-400 text-base" id="spec-2-desc">The .yachts extension serves as an elite filter, ensuring your brand resonates with high-net-worth maritime enthusiasts.</p>
+            </div>
+            <div class="glass-card p-12 rounded-2xl">
+                <span class="text-emerald text-sm font-bold uppercase tracking-widest mb-6 block">Potential</span>
+                <h3 class="text-3xl font-bold uppercase mb-6" id="spec-3-title">Global Ready</h3>
+                <p class="text-slate-400 text-base" id="spec-3-desc">Engineered for global reach. Ideal for luxury charters, engineering firms, or world-class brokerage portfolios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Portfolio -->
+    <section class="py-24 px-8 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="group relative overflow-hidden rounded-3xl border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=1200&auto=format&fit=crop" 
+                         class="w-full grayscale group-hover:grayscale-0 transition-all duration-1000 aspect-video object-cover" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-10 left-10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-emerald mb-2 block">Prototype A</span>
+                        <h4 class="text-2xl font-bold uppercase italic">Stealth Profile</h4>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" 
+                         class="w-full grayscale group-hover:grayscale-0 transition-all duration-1000 aspect-video object-cover" alt="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-10 left-10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-emerald mb-2 block">Prototype B</span>
+                        <h4 class="text-2xl font-bold uppercase italic">Navigational Prowess</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-40 px-8 text-center max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-8" id="cta-title">Establish <span class="text-emerald italic">Presence.</span></h2>
+        <p class="text-slate-400 text-lg md:text-xl font-medium leading-relaxed mb-16" id="cta-desc">
+            Fox.yachts is more than a name; it is a strategic investment in the future of the fleet. Available for secure acquisition.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" target="_blank" 
+               class="bg-emerald text-white px-14 py-5 font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all shadow-[0_10px_40px_rgba(16,185,129,0.3)]">
+                Buy via GoDaddy
+            </a>
+            <a href="mailto:cccvcccv3@gmail.com" 
+               class="border border-white/10 px-14 py-5 font-bold uppercase tracking-widest text-sm hover:bg-white/5 transition-all">
+                Direct Inquiry
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-black/50 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="flex items-center justify-center gap-4 mb-10">
-                <div class="w-8 h-8 bg-gold flex items-center justify-center rounded-sm rotate-45">
-                    <span class="text-navy font-black text-sm -rotate-45">F</span>
-                </div>
-                <span class="text-xl font-serif italic uppercase font-black tracking-tighter">Fox <span class="text-gold">Yachts</span></span>
-            </div>
-            <div class="flex justify-center gap-8 mb-12 text-[10px] font-bold uppercase tracking-widest text-slate-600">
-                <a href="#" class="hover:text-gold transition">Private Listing</a>
-                <a href="mailto:cccvcccv3@gmail.com" class="hover:text-gold transition">cccvcccv3@gmail.com</a>
-                <a href="https://www.godaddy.com/domainsearch/find?domainToCheck=fox.yachts" class="hover:text-gold transition">Escrow Services</a>
-            </div>
-            <p class="text-slate-800 text-[10px] font-bold uppercase tracking-[0.6em]">© 2026 Fox Yachts Portfolio • All Rights Reserved</p>
+    <footer class="py-20 border-t border-white/5 text-center px-8 bg-black/40">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="w-6 h-6 border border-white flex items-center justify-center font-bold text-[10px]">F</div>
+            <span class="text-sm font-bold uppercase tracking-[0.2em]">Fox<span class="text-emerald">.Yachts</span></span>
         </div>
+        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em]">
+            © 2026 Asset Portfolio • Managed Inquiry: cccvcccv3@gmail.com
+        </p>
     </footer>
 
     <script>
         const translations = {
             en: {
                 dir: 'ltr',
-                banner: 'Domain For Sale: Fox.yachts',
-                heroSub: 'The Pinnacle of Maritime Luxury',
-                heroDesc: "Fox.yachts represents more than a domain; it is a legacy. A short, powerful, and elite identity for the world's most prestigious maritime businesses.",
-                aboutTitle: 'Why <br> <span class="text-gold">Fox.yachts?</span>',
-                aboutDesc: 'The ".yachts" extension is the exclusive digital real estate for the maritime elite. "Fox" signifies intelligence, speed, and luxury.',
-                stat1: 'Brand Authority',
-                stat2: 'Global TLD',
-                expTitle: 'Uncharted Luxury',
-                ctaDesc: "Invest in a domain that reflects your ambition. Secure this digital masterpiece today before it's gone forever."
+                status: 'Domain Asset Available',
+                heroSub: 'Defining Global Maritime Presence',
+                heroDesc: 'Fox.yachts is a high-performance digital identifier. Strategically crafted for the next era of elite luxury yachting and maritime brokerage.',
+                spec1Title: 'Short & Precise',
+                spec1Desc: 'Three letters. Infinite brandability. Fox.yachts commands immediate authority in a world where speed and precision matter.',
+                spec2Title: 'Targeted Search',
+                spec2Desc: 'The .yachts extension serves as an elite filter, ensuring your brand resonates with high-net-worth maritime enthusiasts.',
+                spec3Title: 'Global Ready',
+                spec3Desc: 'Engineered for global reach. Ideal for luxury charters, engineering firms, or world-class brokerage portfolios.',
+                ctaTitle: 'Establish <span class="text-emerald italic">Presence.</span>',
+                ctaDesc: 'Fox.yachts is more than a name; it is a strategic investment in the future of the fleet. Available for secure acquisition.'
             },
             ar: {
                 dir: 'rtl',
-                banner: 'النطاق متاح للشراء: Fox.yachts',
-                heroSub: 'قمة الفخامة البحرية',
-                heroDesc: 'يمثل Fox.yachts أكثر من مجرد نطاق؛ إنه إرث. هوية قصيرة، قوية، ونخبوية لأرقى الشركات البحرية في العالم.',
-                aboutTitle: 'لماذا <br> <span class="text-gold">Fox.yachts؟</span>',
-                aboutDesc: 'امتداد ".yachts" هو العقار الرقمي الحصري للنخبة البحرية. كلمة "Fox" ترمز للذكاء والسرعة والفخامة.',
-                stat1: 'هيبة العلامة',
-                stat2: 'نطاق عالمي',
-                expTitle: 'فخامة بلا حدود',
-                ctaDesc: 'استثمر في نطاق يعكس طموحك. احصل على هذه التحفة الرقمية اليوم قبل فوات الأوان.'
+                status: 'الأصل الرقمي متاح للاستحواذ',
+                heroSub: 'تحديد الحضور البحري العالمي',
+                heroDesc: 'Fox.yachts هو معرف رقمي عالي الأداء. صُمم استراتيجياً للمرحلة القادمة من اليخوت الفاخرة والوساطة البحرية للنخبة.',
+                spec1Title: 'قصير ودقيق',
+                spec1Desc: 'ثلاثة أحرف. قابلية لانهائية لبناء العلامة التجارية. Fox.yachts يفرض سلطته فوراً في عالم تهم فيه السرعة والدقة.',
+                spec2Title: 'بحث مستهدف',
+                spec2Desc: 'امتداد .yachts يعمل كفلتر للنخبة، مما يضمن صدى علامتك التجارية لدى المهتمين بالبحار ذوي الثروات العالية.',
+                spec3Title: 'جاهز للعالمية',
+                spec3Desc: 'مُصمم للوصول العالمي. مثالي لشركات التأجير الفاخرة، المكاتب الهندسية، أو محافظ الوساطة العالمية.',
+                ctaTitle: 'فرض <span class="text-emerald italic">الحضور.</span>',
+                ctaDesc: 'Fox.yachts هو أكثر من مجرد اسم؛ إنه استثمار استراتيجي في مستقبل الأسطول. متاح للاستحواذ الآمن.'
             }
         };
 
@@ -267,24 +251,26 @@
             document.documentElement.lang = lang;
             document.body.dir = data.dir;
             
-            document.getElementById('banner-text').textContent = data.banner;
+            document.getElementById('status-tag').textContent = data.status;
             document.getElementById('hero-sub').textContent = data.heroSub;
             document.getElementById('hero-desc').textContent = data.heroDesc;
-            document.getElementById('about-title').innerHTML = data.aboutTitle;
-            document.getElementById('about-desc').textContent = data.aboutDesc;
-            document.getElementById('stat-1').textContent = data.stat1;
-            document.getElementById('stat-2').textContent = data.stat2;
-            document.getElementById('exp-title').textContent = data.expTitle;
+            document.getElementById('spec-1-title').textContent = data.spec1Title;
+            document.getElementById('spec-1-desc').textContent = data.spec1Desc;
+            document.getElementById('spec-2-title').textContent = data.spec2Title;
+            document.getElementById('spec-2-desc').textContent = data.spec2Desc;
+            document.getElementById('spec-3-title').textContent = data.spec3Title;
+            document.getElementById('spec-3-desc').textContent = data.spec3Desc;
+            document.getElementById('cta-title').innerHTML = data.ctaTitle;
             document.getElementById('cta-desc').textContent = data.ctaDesc;
 
-            // Header border flip
-            const aboutTitleParent = document.getElementById('about-title').parentElement;
+            // Header Border orientation
+            const specs = document.getElementById('hero-desc');
             if (data.dir === 'rtl') {
-                aboutTitleParent.classList.remove('border-l-4', 'pl-6');
-                aboutTitleParent.classList.add('border-r-4', 'pr-6');
+                specs.classList.remove('border-l-2', 'pl-6');
+                specs.classList.add('border-r-2', 'pr-6');
             } else {
-                aboutTitleParent.classList.remove('border-r-4', 'pr-6');
-                aboutTitleParent.classList.add('border-l-4', 'pl-6');
+                specs.classList.remove('border-r-2', 'pr-6');
+                specs.classList.add('border-l-2', 'pl-6');
             }
         }
     </script>
