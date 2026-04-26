@@ -1,79 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Fox.yachts | Premium Domain for Sale</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fox Yachts | Luxury Redefined</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #050505;
+    color: white;
+}
+
+/* NAV */
+nav {
+    position: absolute;
+    width: 100%;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: gold;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    letter-spacing: 3px;
+}
+
+.hero span {
+    color: gold;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 34px;
+    border: 1px solid gold;
+    color: gold;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: gold;
+    color: black;
+}
+
+/* SECTION */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* GRID */
+.grid {
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.card {
+    flex: 1;
+    background: #0f0f0f;
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #1a1a1a;
+}
+
+/* IMAGE STRIP */
+.image-strip {
+    height: 400px;
+    background: url('https://images.unsplash.com/photo-1493558103817-58b2924bce98') center/cover no-repeat;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: #0a0a0a;
+}
+
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+</style>
 </head>
-<body class="bg-[#0f172a] text-white">
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-black">
-        <div class="mb-6 inline-block px-4 py-1 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium uppercase tracking-widest">
-            Premium Asset Available
+<body>
+
+<nav>
+    <div class="logo">FOX YACHTS</div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Luxury <span>at Sea</span></h1>
+        <p>Exclusive yachts. Timeless elegance. Global experiences.</p>
+        <button class="btn">Explore</button>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Experience the Extraordinary</h2>
+    <p>Fox Yachts delivers elite maritime experiences for a world-class lifestyle.</p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Private Charter</h3>
+            <p>Tailored journeys across the most beautiful oceans.</p>
         </div>
-        <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tighter">
-            Fox<span class="text-blue-500">.yachts</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl leading-relaxed">
-            The ultimate digital identity for the luxury maritime industry. 
-            Short, memorable, and high-impact branding.
-        </p>
-        
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://www.godaddy.com/en-ae/domain-search?domainToCheck=fox.yachts" target="_blank" 
-               class="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/20">
-                Buy on GoDaddy
-            </a>
-            
-            <a href="https://wa.me/9647805380508" target="_blank" 
-               class="bg-white text-slate-900 hover:bg-slate-100 px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg">
-                Inquiry via WhatsApp
-            </a>
-
-            <a href="mailto:cccvcccv3@gmail.com?subject=Inquiry about Fox.yachts domain" 
-               class="bg-transparent border border-slate-700 hover:bg-slate-800 text-white px-10 py-4 rounded-xl font-bold transition-all">
-                Contact via Email
-            </a>
+        <div class="card">
+            <h3>Global Destinations</h3>
+            <p>From Monaco to Maldives, luxury without limits.</p>
         </div>
-    </section>
-
-    <section class="py-24 bg-white text-slate-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-16 text-center">
-                <div class="group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
-                        <span class="text-3xl group-hover:filter group-hover:invert">⚓</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Niche Specific</h3>
-                    <p class="text-slate-500 leading-relaxed">The .yachts extension instantly positions your brand at the heart of the luxury maritime sector.</p>
-                </div>
-                <div class="group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
-                        <span class="text-3xl group-hover:filter group-hover:invert">🦊</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Powerful Brand</h3>
-                    <p class="text-slate-500 leading-relaxed">"Fox" is a prestigious, 3-letter name representing intelligence, speed, and exclusivity.</p>
-                </div>
-                <div class="group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
-                        <span class="text-3xl group-hover:filter group-hover:invert">💎</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Digital Asset</h3>
-                    <p class="text-slate-500 leading-relaxed">A rare opportunity to secure a high-liquidity asset in an increasingly competitive market.</p>
-                </div>
-            </div>
+        <div class="card">
+            <h3>Elite Crew</h3>
+            <p>Unmatched service designed for perfection.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>© 2026 William Smith- Professional Domain Broker & Web Designer.</p>
-        <p class="mt-2">Global Transaction Security via Escrow or Major Registrars.</p>
-    </footer>
+<div class="image-strip"></div>
+
+<section class="cta">
+    <h2>Own This Premium Brand</h2>
+    <p>Fox.yachts is available for acquisition.</p>
+    <button class="btn">Contact Owner</button>
+</section>
+
+<footer>
+    <p>© 2026 Fox Yachts</p>
+</footer>
 
 </body>
 </html>
